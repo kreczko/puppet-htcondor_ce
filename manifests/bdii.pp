@@ -33,10 +33,7 @@ class htcondor_ce::bdii (
     require => Package['htcondor-ce-bdii'],
   }
 
-  exec {'/usr/bin/condor_ce_reconfig':
-    refreshonly => true,
-  }
-
+  # this exec is defined in config.pp
   File[$bdii_ce_config] ~> Exec['/usr/bin/condor_ce_reconfig']
 
 }
