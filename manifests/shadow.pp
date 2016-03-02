@@ -13,7 +13,7 @@ class htcondor_ce::shadow (
 ) inherits htcondor_ce {
 
   package { 'condor-static-shadow':
-    ensure => "${lrms_version}",
+    ensure => $lrms_version,
   }
 
   file { '/etc/condor/config.d/41_ce_shadow.conf':
