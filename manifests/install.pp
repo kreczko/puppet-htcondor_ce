@@ -10,6 +10,7 @@ class htcondor_ce::install {
   $lrms_version      = $::htcondor_ce::lrms_version
   $use_static_shadow = $::htcondor_ce::use_static_shadow
   $install_bdii      = $::htcondor_ce::install_bdii
+  $condor_view_hosts = $::htcondor_ce::condor_view_hosts
 
   package { ['globus-rsl', 'blahp', 'empty-ca-certs']: ensure => present, }
 
@@ -25,5 +26,12 @@ class htcondor_ce::install {
   if $use_static_shadow {
     package { 'condor-static-shadow': ensure => $lrms_version, }
   }
+
+  if !empty($condor_view_hosts) and member($condor_view_hosts, $::fqdn) {
+    package {'htcondor-ce-view':
+      ensure => present,
+    }
+  }
+
 
 }
