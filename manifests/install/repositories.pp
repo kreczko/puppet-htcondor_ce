@@ -31,7 +31,8 @@ class htcondor_ce::install::repositories {
           before   => [Package['condor'], Package['htcondor-ce']],
         }
     }
-  default: {
-    fail("This module currently doesn't support OSes other than CentOS 7")
+    default: {
+      fail("This module currently doesn't support OSes other than CentOS 7")
+    }
   }
 }
