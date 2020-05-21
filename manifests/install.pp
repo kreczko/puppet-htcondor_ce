@@ -18,7 +18,6 @@ class htcondor_ce::install {
 
   package { ['htcondor-ce', 'htcondor-ce-client', "htcondor-ce-${lrms}"]:
     ensure          => $ce_version,
-    require         => Package['condor', 'blahp', 'globus-rsl', 'empty-ca-certs'],
     install_options => ['--enablerepo', 'epel,wlcg,htcondor-stable'],
   }
 
