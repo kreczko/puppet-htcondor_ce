@@ -9,7 +9,7 @@ class htcondor_ce::install::repositories {
           enabled  => 0,
           gpgcheck => 1,
           gpgkey   => 'http://research.cs.wisc.edu/htcondor/yum/RPM-GPG-KEY-HTCondor',
-          before   => [Package['condor'], Package['htcondor-ce']],
+          before   => [Package['htcondor-ce']],
         }
 
         yumrepo { 'wlcg':
@@ -18,7 +18,7 @@ class htcondor_ce::install::repositories {
           enabled  => 0,
           gpgcheck => 1,
           gpgkey   => 'http://linuxsoft.cern.ch/wlcg/RPM-GPG-KEY-wlcg',
-          before   => [Package['condor'], Package['htcondor-ce']],
+          before   => [Package['htcondor-ce']],
         }
 
         yumrepo { 'epel':
@@ -28,7 +28,7 @@ class htcondor_ce::install::repositories {
           enabled  => 0,
           gpgcheck => 1,
           gpgkey   => 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7',
-          before   => [Package['condor'], Package['htcondor-ce']],
+          before   => [Package['htcondor-ce']],
         }
     }
     default: {
