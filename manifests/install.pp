@@ -12,11 +12,14 @@ class htcondor_ce::install {
   $install_bdii      = $::htcondor_ce::install_bdii
   $condor_view_hosts = $::htcondor_ce::condor_view_hosts
 
-  package { ['globus-rsl', 'blahp', 'empty-ca-certs']: ensure => present, }
+  include htcondor_ce::install::repositories
+
+  package { ['globus-rsl']: ensure => present, }
 
   package { ['htcondor-ce', 'htcondor-ce-client', "htcondor-ce-${lrms}"]:
-    ensure  => $ce_version,
-    require => Package['condor', 'blahp', 'globus-rsl', 'empty-ca-certs'],
+    ensure          => $ce_version,
+    require         => Package['condor', 'blahp', 'globus-rsl', 'empty-ca-certs'],
+    install_options => ['--enablerepo', 'epel,wlcg,htcondor-stable'],
   }
 
   if $install_bdii {
