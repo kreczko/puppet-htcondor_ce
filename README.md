@@ -14,6 +14,7 @@
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 1. [Limitations - OS compatibility, etc.](#limitations)
 1. [Development - Guide for contributing to the module](#development)
+1. [GridPP Documentation](#GridPP-Documentation)
 
 ## Description
 
@@ -84,3 +85,9 @@ know what the ground rules for contributing are.
 If you aren't using changelog, put your release notes here (though you should
 consider using changelog). You can also add any additional sections you feel
 are necessary or important to include here. Please use the `## ` header.
+
+
+## GridPP Documentation
+
+- https://www.gridpp.ac.uk/wiki/Example_Build_of_an_HTCondor-CE_Cluster
+- https://twiki.cern.ch/twiki/bin/view/LCG/HtCondorCeAccounting
