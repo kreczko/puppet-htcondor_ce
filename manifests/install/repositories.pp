@@ -24,7 +24,7 @@ class htcondor_ce::install::repositories {
         yumrepo { 'epel':
           descr    => 'Extra Packages for Enterprise Linux 7 - $basearch',
           metalink => 'https://mirrors.fedoraproject.org/metalink?repo=epel-debug-7&arch=$basearch&infra=$infra&content=$contentdir',
-          baseurl  => 'http://linuxsoft.cern.ch/wlcg/centos7/$basearch',
+          # baseurl  => 'http://download.fedoraproject.org/pub/epel/7/$basearch',
           enabled  => 0,
           gpgcheck => 1,
           gpgkey   => 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7',
