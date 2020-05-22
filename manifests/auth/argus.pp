@@ -29,7 +29,10 @@ class htcondor_ce::auth::argus {
     'lcmaps-plugins-verify-proxy',
     'lcmaps-plugins-voms',
   ]
-  package { $argus_packages: ensure => present, }
+  package { $argus_packages:
+    ensure          => present,
+    install_options => ['--enablerepo', 'epel,wlcg,htcondor-stable']
+  }
   -> file { $pep_callout:
     ensure  => file,
     owner   => 'root',
