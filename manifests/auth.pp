@@ -15,4 +15,10 @@ class htcondor_ce::auth {
   } else {
     fail("This module currently doesn't support backends other than ARGUS.")
   }
+
+  package {'ca-certificates':
+    ensure => latest,
+  }
+
+  # TODO: add fetch-crl
 }
