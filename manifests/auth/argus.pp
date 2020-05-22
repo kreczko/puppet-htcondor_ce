@@ -31,7 +31,7 @@ class htcondor_ce::auth::argus {
   ]
   package { $argus_packages:
     ensure          => present,
-    install_options => ['--enablerepo', 'epel,wlcg,htcondor-stable']
+    install_options => ['--enablerepo', 'epel,wlcg,UMD-4-base,UMD-4-updates']
   }
   -> file { $pep_callout:
     ensure  => file,
