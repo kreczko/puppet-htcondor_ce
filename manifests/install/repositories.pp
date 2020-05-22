@@ -39,6 +39,42 @@ class htcondor_ce::install::repositories {
           gpgkey   => 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7',
           before   => [Package['htcondor-ce']],
       }
+
+      yumrepo { 'EGI-trustanchors':
+          descr    => 'EGI-trustanchors',
+          baseurl  => 'http://repository.egi.eu/sw/production/cas/1/current/',
+          enabled  => 1,
+          gpgcheck => 1,
+          gpgkey   => 'http://repository.egi.eu/sw/production/cas/1/current/GPG-KEY-EUGridPMA-RPM-3',
+          before   => [Package['htcondor-ce']],
+      }
+
+      yumrepo { 'EGI-trustanchors':
+          descr    => 'EGI-trustanchors',
+          baseurl  => 'http://repository.egi.eu/sw/production/cas/1/current/',
+          enabled  => 1,
+          gpgcheck => 1,
+          gpgkey   => 'http://repository.egi.eu/sw/production/cas/1/current/GPG-KEY-EUGridPMA-RPM-3',
+          before   => [Package['htcondor-ce']],
+      }
+
+      yumrepo { 'UMD-4-base':
+          descr    => "UMD-4-base (${facts['os']['release']['major']})",
+          baseurl  => 'http://repository.egi.eu/sw/production/umd/4/centos7/$basearch/base',
+          enabled  => 0,
+          gpgcheck => 1,
+          gpgkey   => 'http://repository.egi.eu/sw/production/umd/UMD-RPM-PGP-KEY',
+          before   => [Package['htcondor-ce']],
+      }
+
+      yumrepo { 'UMD-4-updates':
+          descr    => "UMD-4-updates (${facts['os']['release']['major']})",
+          baseurl  => 'http://repository.egi.eu/sw/production/umd/4/centos7/$basearch/updates',
+          enabled  => 0,
+          gpgcheck => 1,
+          gpgkey   => 'http://repository.egi.eu/sw/production/umd/UMD-RPM-PGP-KEY',
+          before   => [Package['htcondor-ce']],
+      }
     }
     default: {
       fail("This module currently doesn't support OSes other than CentOS 7")
