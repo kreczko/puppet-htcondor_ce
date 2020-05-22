@@ -32,7 +32,7 @@ class htcondor_ce::install::repositories {
 
       yumrepo { 'epel':
           descr    => 'Extra Packages for Enterprise Linux 7 - $basearch',
-          metalink => 'https://mirrors.fedoraproject.org/metalink?repo=epel-debug-7&arch=$basearch&infra=$infra&content=$contentdir',
+          metalink => 'https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch',
           # baseurl  => 'http://download.fedoraproject.org/pub/epel/7/$basearch',
           enabled  => 0,
           gpgcheck => 1,
