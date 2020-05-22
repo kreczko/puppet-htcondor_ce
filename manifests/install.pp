@@ -22,7 +22,10 @@ class htcondor_ce::install {
   }
 
   if $install_bdii {
-    package { 'htcondor-ce-bdii': ensure => $ce_version, }
+    package { 'htcondor-ce-bdii': 
+      ensure => $ce_version,
+      install_options => ['--enablerepo', 'epel,wlcg,htcondor-development'],
+    }
   }
 
   if $use_static_shadow {
@@ -32,6 +35,7 @@ class htcondor_ce::install {
   if !empty($condor_view_hosts) and member($condor_view_hosts, $::fqdn) {
     package {'htcondor-ce-view':
       ensure => present,
+      install_options => ['--enablerepo', 'epel,wlcg,htcondor-development'],
     }
   }
 
