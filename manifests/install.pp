@@ -18,7 +18,7 @@ class htcondor_ce::install {
 
   package { ['htcondor-ce', 'htcondor-ce-client', "htcondor-ce-${lrms}"]:
     ensure          => $ce_version,
-    install_options => ['--enablerepo', 'epel,wlcg,htcondor-stable'],
+    install_options => ['--enablerepo', 'epel,wlcg,htcondor-development'],
   }
 
   if $install_bdii {
