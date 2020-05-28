@@ -16,7 +16,7 @@ class htcondor_ce::auth {
     fail("This module currently doesn't support backends other than ARGUS.")
   }
 
-  package {['ca-certificates', 'ca-policy-egi-core']:
+  package {['ca-certificates']:
     ensure => latest,
   }
 
