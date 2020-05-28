@@ -47,6 +47,12 @@ class htcondor_ce::auth::argus {
     mode    => '0644',
     source  => "puppet:///modules/${module_name}/gsi-authz.conf",
     require => Package['argus-gsi-pep-callout'],
+  } -> file{ '/etc/lcmaps/lcmaps.db':
+    ensure  => file,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    source  => template("${module_name}/lcmaps.db.erb"),
+    require => Package['argus-gsi-pep-callout'],
   }
-
 }
