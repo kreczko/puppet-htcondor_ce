@@ -76,4 +76,6 @@ class htcondor_ce::config {
     class { '::htcondor_ce::config::shadow': }
   }
 
+  class { '::htcondor_ce::config::certs': }
+
 }

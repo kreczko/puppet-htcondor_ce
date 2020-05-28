@@ -23,4 +23,8 @@ class htcondor_ce::params {
   $execution_env_cores = 16
   $election_type       = 'leader'
   $election_hosts      = $::fqdn
+
+  # cert parameters
+  $hostcert_location   = '/root/hostcert.pem'
+  $hostkey_location    = '/root/hostkey.pem'
 }
