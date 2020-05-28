@@ -52,7 +52,7 @@ class htcondor_ce::auth::argus {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => template("${module_name}/lcmaps.db.erb"),
+    content => template("${module_name}/lcmaps.db.erb"),
     require => Package['argus-gsi-pep-callout'],
   }
 }
