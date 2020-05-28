@@ -20,5 +20,5 @@ class htcondor_ce::auth {
     ensure => latest,
   }
 
-  # TODO: add fetch-crl
+  include fetchcrl
 }
