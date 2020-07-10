@@ -1,6 +1,6 @@
-# Class: htcondor_ce::bdii
+# Class: htcondor_ce::config bdii
 #
-# This class installs and configures the
+# This class configures the
 # Resource BDII for the HTCondor Computing Element
 #
 class htcondor_ce::config::bdii {
@@ -25,4 +25,12 @@ class htcondor_ce::config::bdii {
 
   File[$bdii_ce_config] ~> Exec['/usr/bin/condor_ce_reconfig']
 
+  service{'bdii':
+    ensure  => running,
+    enabled => true,
+  }
+  # make sure /etc/condor/config.d/99-ce-bdii.conf is removed
+  file {'/etc/condor/config.d/99-ce-bdii.conf':
+    ensure => absent,
+  }
 }
