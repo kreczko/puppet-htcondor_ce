@@ -1,0 +1,13 @@
+###############################################################################
+#
+# HTCondor-CE APEL configuration file.
+#
+###############################################################################
+
+# Directory to write batch and blah records
+APEL_OUTPUT_DIR = <%= @apel_output_dir -%>
+
+APEL_CE_HOST = $(CONDOR_HOST)
+APEL_BATCH_HOST = $(CONDOR_HOST)
+
+APEL_SCALING_ATTR = MachineAttr<%= @apel_scaling_attr -%>0

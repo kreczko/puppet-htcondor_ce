@@ -27,4 +27,11 @@ class htcondor_ce::params {
   # cert parameters
   $hostcert_location   = '/root/hostcert.pem'
   $hostkey_location    = '/root/hostkey.pem'
+
+  # accounting parameters
+  $install_apel        = true
+  $apel_ce_config      = '/etc/condor-ce/config.d/51-ce-apel.conf'
+  $apel_condor_config  = '/etc/condor/config.d/51-condor-apel.conf'
+  $apel_output_dir     = '/var/lib/condor-ce/apel/'
+  $apel_scaling_attr   = RalScaling
 }

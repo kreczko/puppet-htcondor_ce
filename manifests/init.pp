@@ -22,6 +22,12 @@ class htcondor_ce (
   $argus_resourceid    = $::htcondor_ce::params::argus_resourceid,
   # for bdii
   $install_bdii        = $::htcondor_ce::params::install_bdii,
+  # APEL accounting
+  $install_apel        = $::htcondor_ce::params::install_apel,
+  $apel_ce_config      = htcondor_ce::params::apel_ce_config,
+  $apel_condor_config  = htcondor_ce::params::apel_condor_config,
+  $apel_output_dir     = htcondor_ce::params::apel_output_dir,
+  $apel_scaling_attr   = htcondor_ce::params::apel_scaling_attr,
   $supported_vos       = $::htcondor_ce::params::supported_vos,
   $goc_site_name       = $::htcondor_ce::params::goc_site_name,
   $benchmark_result    = $::htcondor_ce::params::benchmark_result,

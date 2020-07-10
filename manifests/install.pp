@@ -28,6 +28,15 @@ class htcondor_ce::install {
     }
   }
 
+  if $install_apel {
+    $apel_packages = ['apel-client', 'apel-parser', 'htcondor-ce-apel']
+
+    package{$apel_packages:
+      ensure=> present,
+      install_options => ['--enablerepo', 'epel,UMD-4-updates,htcondor-development']
+    }
+  }
+
   if $use_static_shadow {
     package { 'condor-static-shadow': ensure => $lrms_version, }
   }
