@@ -34,4 +34,9 @@ class htcondor_ce::params {
   $apel_condor_config  = '/etc/condor/config.d/51-condor-apel.conf'
   $apel_output_dir     = '/var/lib/condor-ce/apel/'
   $apel_scaling_attr   = RalScaling
+
+  $apel_mysql_root_pw  = '12345'
+  $apel_mysql_db       = 'apel'
+  $apel_mysql_user     = 'apelclient'
+  $apel_mysql_password = 'apel12345'
 }
