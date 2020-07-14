@@ -76,6 +76,10 @@ class htcondor_ce::config {
     class { '::htcondor_ce::config::shadow': }
   }
 
+  if $install_apel {
+    class { '::htcondor_ce::config::apel': }
+  }
+
   class { '::htcondor_ce::config::certs': }
 
 }
