@@ -9,6 +9,7 @@ class htcondor_ce::install {
   $lrms              = $::htcondor_ce::lrms
   $lrms_version      = $::htcondor_ce::lrms_version
   $use_static_shadow = $::htcondor_ce::use_static_shadow
+  $install_apel      = $::htcondor_ce::install_apel
   $install_bdii      = $::htcondor_ce::install_bdii
   $condor_view_hosts = $::htcondor_ce::condor_view_hosts
 
