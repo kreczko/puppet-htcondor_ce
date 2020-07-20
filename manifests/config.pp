@@ -10,6 +10,7 @@ class htcondor_ce::config {
   $condor_mapfile      = '/etc/condor-ce/condor_mapfile'
   $ce_sysconfig        = '/etc/sysconfig/condor-ce'
   # general parameters used in manifest or more than one template
+  $install_apel        = $::htcondor_ce::install_apel
   $install_bdii        = $::htcondor_ce::install_bdii
   $uid_domain          = $::htcondor_ce::uid_domain
   $use_static_shadow   = $::htcondor_ce::use_static_shadow
