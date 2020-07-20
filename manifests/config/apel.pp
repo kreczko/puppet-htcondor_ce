@@ -31,7 +31,7 @@ class htcondor_ce::config::apel{
     owner   => 'condor',
     group   => 'condor',
     mode    => '0644',
-    content => template("${module_name}/51-ce-condor.conf.erb"),
+    content => template("${module_name}/51-condor-apel.conf.erb"),
     require => Package['htcondor-ce-apel'],
   }
 
