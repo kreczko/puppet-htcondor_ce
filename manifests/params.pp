@@ -41,12 +41,12 @@ class htcondor_ce::params {
   $apel_mysql_password = 'apel12345'
 
   $job_routes = {
-    default_route => {
-      TargetUniverse => 5,
-      eval_set_AccountingGroup => 'strcat("group_u_", x509userproxyvoname, ".", Owner)',
-      delete_SUBMIT_Iwd => true,
-      set_WantIOProxy => true,
-      set_default_maxMemory => 3000
+    'default_route' => {
+      'TargetUniverse' => 5,
+      'eval_set_AccountingGroup' => 'strcat("group_u_", x509userproxyvoname, ".", Owner)',
+      'delete_SUBMIT_Iwd' => true,
+      'set_WantIOProxy' => true,
+      'set_default_maxMemory' => 3000
       }
   }
 }

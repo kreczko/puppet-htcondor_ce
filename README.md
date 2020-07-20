@@ -91,3 +91,16 @@ are necessary or important to include here. Please use the `## ` header.
 
 - https://www.gridpp.ac.uk/wiki/Example_Build_of_an_HTCondor-CE_Cluster
 - https://twiki.cern.ch/twiki/bin/view/LCG/HtCondorCeAccounting
+
+## Defining job routes
+
+```yaml
+htcondor_ce::job_routes:
+  dice_centos7:
+    TargetUniverse: 5
+    eval_set_AccountingGroup: 'strcat("group_u_", x509userproxyvoname, ".", Owner)'
+    delete_SUBMIT_Iwd: true
+    set_WantIOProxy: true
+    set_default_maxMemory: 3000
+    set_Requirements: 'TARGET.OpSysAndVer == "CentOS7"'
+```
