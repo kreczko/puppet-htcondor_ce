@@ -6,8 +6,8 @@ JOB_ROUTER_ENTRIES @=jre
 <% @job_routes.each do |route_name, settings| %>
 [
   name = <%=route_name -%>;
-<% settings.each do |name, value| %>
-  <% name -%> = <%  value -%>;
+<% settings.each do |name, value| -%>
+  <%=name -%> = <%=value -%>;
 <% end -%>
 ]<% end %>
 @jre
