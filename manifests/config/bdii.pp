@@ -27,7 +27,7 @@ class htcondor_ce::config::bdii {
 
   service{'bdii':
     ensure  => running,
-    enabled => true,
+    enable => true,
   }
   # make sure /etc/condor/config.d/99-ce-bdii.conf is removed
   file {'/etc/condor/config.d/99-ce-bdii.conf':
