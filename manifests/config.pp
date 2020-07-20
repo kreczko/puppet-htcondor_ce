@@ -38,13 +38,7 @@ class htcondor_ce::config {
     content => template("${module_name}/60-configured-attributes.conf.erb"),
   }
 
-  file { $job_routes:
-    ensure  => file,
-    owner   => 'condor',
-    group   => 'condor',
-    mode    => '0644',
-    content => template($job_routes_template),
-  }
+  class {'::htcondor::config::job_routes': }
 
   file { $condor_mapfile:
     ensure  => file,
