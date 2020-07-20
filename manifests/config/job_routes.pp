@@ -11,4 +11,6 @@ class htcondor_ce::config::job_routes{
     mode    => '0644',
     content => template($job_routes_template),
   }
+
+  File[$job_routes_file] ~> Exec['/usr/bin/condor_ce_reconfig']
 }

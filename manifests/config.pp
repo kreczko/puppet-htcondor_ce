@@ -11,7 +11,6 @@ class htcondor_ce::config {
   $ce_sysconfig        = '/etc/sysconfig/condor-ce'
   # general parameters used in manifest or more than one template
   $install_bdii        = $::htcondor_ce::install_bdii
-  $job_routes_template = $::htcondor_ce::job_routes_template
   $uid_domain          = $::htcondor_ce::uid_domain
   $use_static_shadow   = $::htcondor_ce::use_static_shadow
   # $site_security
@@ -55,7 +54,7 @@ class htcondor_ce::config {
     source => "puppet:///modules/${module_name}/sysconfig-condor-ce",
   }
 
-  $config_files = [File[$main_ce_config], File[$site_security], File[$job_routes], File[$condor_mapfile]]
+  $config_files = [File[$main_ce_config], File[$site_security], File[$condor_mapfile]]
 
   exec { '/usr/bin/condor_ce_reconfig': refreshonly => true, }
 
