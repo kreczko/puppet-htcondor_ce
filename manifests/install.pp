@@ -30,7 +30,7 @@ class htcondor_ce::install {
   }
 
   if $install_apel {
-    $apel_packages = ['apel-client', 'apel-parser', 'htcondor-ce-apel']
+    $apel_packages = ['apel-client', 'apel-parsers', 'htcondor-ce-apel']
 
     package{$apel_packages:
       ensure=> present,
