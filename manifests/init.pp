@@ -8,6 +8,7 @@ class htcondor_ce (
   $pool_collectors     = $::htcondor_ce::params::pool_collectors,
   $condor_view_hosts   = $::htcondor_ce::params::condor_view_hosts,
   $job_routes_template = $::htcondor_ce::params::job_routes_template,
+  $job_routes          = $::htcondor_ce::params::job_routes,
   $ce_version          = $::htcondor_ce::params::ce_version,
   $lrms                = $::htcondor_ce::params::lrms,
   $lrms_version        = $::htcondor_ce::params::lrms_version,

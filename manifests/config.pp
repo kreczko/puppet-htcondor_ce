@@ -38,7 +38,7 @@ class htcondor_ce::config {
     content => template("${module_name}/60-configured-attributes.conf.erb"),
   }
 
-  class {'::htcondor::config::job_routes': }
+  class {'::htcondor_ce::config::job_routes': }
 
   file { $condor_mapfile:
     ensure  => file,
