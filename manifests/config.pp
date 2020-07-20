@@ -7,7 +7,6 @@
 class htcondor_ce::config {
   $site_security       = '/etc/condor-ce/config.d/59-site-security.conf'
   $main_ce_config      = '/etc/condor-ce/config.d/60-configured-attributes.conf'
-  $job_routes          = '/etc/condor-ce/config.d/61-job-routes.conf'
   $condor_mapfile      = '/etc/condor-ce/condor_mapfile'
   $ce_sysconfig        = '/etc/sysconfig/condor-ce'
   # general parameters used in manifest or more than one template
