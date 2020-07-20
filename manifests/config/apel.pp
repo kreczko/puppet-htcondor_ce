@@ -5,16 +5,16 @@
 #
 # from https://twiki.cern.ch/twiki/bin/view/LCG/HtCondorCeAccounting
 class htcondor_ce::config::apel{
-  $apel_ce_config      = htcondor_ce::apel_ce_config
-  $apel_condor_config  = htcondor_ce::apel_condor_config
-  $apel_output_dir     = htcondor_ce::apel_output_dir
-  $apel_scaling_attr   = htcondor_ce::apel_scaling_attr
-  $apel_mysql_root_pw  = htcondor_ce::apel_mysql_root_pw
-  $apel_mysql_db       = htcondor_ce::apel_mysql_db
-  $apel_mysql_user     = htcondor_ce::apel_mysql_user
-  $apel_mysql_password = htcondor_ce::apel_mysql_password
+  $apel_ce_config      = $::htcondor_ce::apel_ce_config
+  $apel_condor_config  = $::htcondor_ce::apel_condor_config
+  $apel_output_dir     = $::htcondor_ce::apel_output_dir
+  $apel_scaling_attr   = $::htcondor_ce::apel_scaling_attr
+  $apel_mysql_root_pw  = $::htcondor_ce::apel_mysql_root_pw
+  $apel_mysql_db       = $::htcondor_ce::apel_mysql_db
+  $apel_mysql_user     = $::htcondor_ce::apel_mysql_user
+  $apel_mysql_password = $::htcondor_ce::apel_mysql_password
 
-  $goc_site_name       = htcondor_ce::goc_site_name
+  $goc_site_name       = $::htcondor_ce::goc_site_name
 
 
   file{$apel_ce_config:
