@@ -33,6 +33,7 @@ class htcondor_ce (
   $apel_mysql_db       = $::htcondor_ce::params::apel_mysql_db,
   $apel_mysql_user     = $::htcondor_ce::params::apel_mysql_user,
   $apel_mysql_password = $::htcondor_ce::params::apel_mysql_password,
+  $apel_use_test_queue = $::htcondor_ce::params::apel_use_test_queue,
   $supported_vos       = $::htcondor_ce::params::supported_vos,
   $goc_site_name       = $::htcondor_ce::params::goc_site_name,
   $benchmark_result    = $::htcondor_ce::params::benchmark_result,
