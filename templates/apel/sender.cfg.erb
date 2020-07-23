@@ -6,19 +6,11 @@
 
 # The SSM will query a BDII to find brokers available.  These details are for the
 # EGI production broker network
-<% if @apel_use_test_queue %>
-#bdii: ldap://lcg-bdii.cern.ch:2170
-#network: PROD
-# OR (these details will only be used if the broker network settings aren't used)
-host: test-msg02.afroditi.hellasgrid.gr
-port: 6163
-<% else %>
 bdii: ldap://lcg-bdii.cern.ch:2170
 network: PROD
 # OR (these details will only be used if the broker network settings aren't used)
 # host: test-msg02.afroditi.hellasgrid.gr
 # port: 6163
-<% end %>
 
 # broker authentication.  If use_ssl is set, the certificates configured
 # in the mandatory [certificates] section will be used.
@@ -43,12 +35,12 @@ capath: /etc/grid-security/certificates
 #
 [messaging]
 
-<% if @apel_use_test_queue %>
 # Queue to which SSM will send messages
-destination: /queue/global.accounting.cputest.CENTRAL
+<% if @apel_use_test_queue %>
+destination: /queue/global.accounting.test.cpu.central
 <% else %>
 destination: /queue/global.accounting.cpu.central
-<% end %>
+<% end -%>
 
 # Outgoing messages will be read and removed from this directory.
 path: /var/spool/apel/outgoing
