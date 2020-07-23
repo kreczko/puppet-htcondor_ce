@@ -47,7 +47,9 @@ class htcondor_ce::config::apel{
     password => $apel_mysql_password,
     host     => 'localhost',
     grant    => ['ALL'],
+    sql      => '/usr/share/apel/client.sql'
 }
+
   ## setup cron jobs for blah and batch parsing
   ## setup config for ssmsend
   ## setup cron jobs for ssmsend
