@@ -49,7 +49,25 @@ class htcondor_ce::config::apel{
     host     => 'localhost',
     grant    => ['ALL'],
     sql      => '/usr/share/apel/client.sql'
-}
+  }
+
+  file{'/etc/apel/client.cfg':
+    ensure => present,
+    content => template("${module_name}/apel/client.cfg.erb"),
+    require => Package['htcondor-ce-apel'],
+  }
+
+  file{'/etc/apel/parser.cfg':
+    ensure => present,
+    content => template("${module_name}/apel/parser.cfg.erb"),
+    require => Package['htcondor-ce-apel'],
+  }
+
+  file{'/etc/apel/sender.cfg':
+    ensure => present,
+    content => template("${module_name}/apel/sender.cfg.erb"),
+    require => Package['htcondor-ce-apel'],
+  }
 
   ## setup cron jobs for blah and batch parsing
   ## setup config for ssmsend
