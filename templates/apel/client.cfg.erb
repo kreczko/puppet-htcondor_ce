@@ -2,9 +2,9 @@
 [db]
 hostname = localhost
 port = 3306
-name = apelclient
-username = apel
-password =
+name = <%=@apel_mysql_db %>
+username = <%=@apel_mysql_user %>
+password = <%=@apel_mysql_password %>
 
 [spec_updater]
 enabled = true
@@ -21,7 +21,7 @@ ldap_port = 2170
 ## This does not need to be a definitive hostname,
 ## but it should uniquely identify the batch system.
 ## Example: pbs.gridpp.rl.ac.uk
-lrms_server =  <%=@fdqn -%>:9618/<%=@fdqn -%>-condor
+lrms_server =  <%=@fqdn -%>:9618/<%=@fqdn -%>-condor
 #spec_type = HEPSPEC
 #spec_value = 1.0
 
