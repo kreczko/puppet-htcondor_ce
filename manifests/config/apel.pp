@@ -52,24 +52,31 @@ class htcondor_ce::config::apel{
   }
 
   file{'/etc/apel/client.cfg':
-    ensure => present,
+    ensure  => present,
     content => template("${module_name}/apel/client.cfg.erb"),
     require => Package['htcondor-ce-apel'],
   }
 
   file{'/etc/apel/parser.cfg':
-    ensure => present,
+    ensure  => present,
     content => template("${module_name}/apel/parser.cfg.erb"),
     require => Package['htcondor-ce-apel'],
   }
 
   file{'/etc/apel/sender.cfg':
-    ensure => present,
+    ensure  => present,
     content => template("${module_name}/apel/sender.cfg.erb"),
     require => Package['htcondor-ce-apel'],
   }
 
-  ## setup cron jobs for blah and batch parsing
-  ## setup config for ssmsend
-  ## setup cron jobs for ssmsend
+  file{'/etc/apel/cron_condor-ce_apel.sh':
+    ensure  => present,
+    source  => "puppet:///modules/${module_name}/apel/cron_condor-ce_apel.sh",
+    mode    => '0755',
+  }->cron::job {'apel-processing':
+    minute  => '31',
+    hour    => '2',
+    command => '/etc/apel/cron_condor-ce_apel.sh',
+    description => 'APEL HTCondor-CE job parsing',
+  }
 }

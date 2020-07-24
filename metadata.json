@@ -8,7 +8,11 @@
   "project_page": "https://github.com/cernops/puppet-htcondor_ce",
   "issues_url": "https://github.com/cernops/puppet-htcondor_ce/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {
+      "name": "puppet-cron",
+      "version_requirement": ">= 2.0.0"
+    }
   ]
 }
 
