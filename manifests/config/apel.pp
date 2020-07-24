@@ -73,10 +73,17 @@ class htcondor_ce::config::apel{
     ensure  => present,
     source  => "puppet:///modules/${module_name}/apel/cron_condor-ce_apel.sh",
     mode    => '0755',
-  }->cron::job {'apel-processing':
-    minute  => '31',
-    hour    => '2',
-    command => '/etc/apel/cron_condor-ce_apel.sh',
+  }
+
+  class { '::cron':
+    manage_package => false,
+  }
+
+  cron::job {'apel-processing':
+    minute      => '31',
+    hour        => '2',
+    command     => '/etc/apel/cron_condor-ce_apel.sh',
     description => 'APEL HTCondor-CE job parsing',
+    require     => File['/etc/apel/cron_condor-ce_apel.sh'],
   }
 }
