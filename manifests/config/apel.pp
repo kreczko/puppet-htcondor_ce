@@ -14,12 +14,13 @@ class htcondor_ce::config::apel{
   $apel_mysql_user     = $::htcondor_ce::apel_mysql_user
   $apel_mysql_password = $::htcondor_ce::apel_mysql_password
   $apel_use_test_queue = $::htcondor_ce::apel_use_test_queue
+  $benchmark_result    = $::htcondor_ce::benchmark_result
 
   $goc_site_name       = $::htcondor_ce::goc_site_name
 
 
   file{$apel_ce_config:
-    ensure => present,
+    ensure  => present,
     owner   => 'condor',
     group   => 'condor',
     mode    => '0644',
@@ -28,7 +29,7 @@ class htcondor_ce::config::apel{
   }
 
   file{$apel_condor_config:
-    ensure => present,
+    ensure  => present,
     owner   => 'condor',
     group   => 'condor',
     mode    => '0644',
@@ -70,9 +71,9 @@ class htcondor_ce::config::apel{
   }
 
   file{'/etc/apel/cron_condor-ce_apel.sh':
-    ensure  => present,
-    source  => "puppet:///modules/${module_name}/apel/cron_condor-ce_apel.sh",
-    mode    => '0755',
+    ensure => present,
+    source => "puppet:///modules/${module_name}/apel/cron_condor-ce_apel.sh",
+    mode   => '0755',
   }
 
   class { '::cron':

@@ -22,8 +22,8 @@ ldap_port = 2170
 ## but it should uniquely identify the batch system.
 ## Example: pbs.gridpp.rl.ac.uk
 lrms_server =  <%=@fqdn -%>:9619/<%=@fqdn -%>-condor
-#spec_type = HEPSPEC
-#spec_value = 1.0
+spec_type = HEPSPEC
+spec_value = <%=@benchmark_result -%>
 
 ## To manually set specs for all jobs (not just local ones), configure lines
 ## like the following named "manual_spec" followed by consecutive integers for
@@ -32,6 +32,7 @@ lrms_server =  <%=@fqdn -%>:9619/<%=@fqdn -%>-condor
 # manual_spec1 = grid10.uni.ac.uk:1234/grid10.uni.ac.uk-condor,HEPSPEC,10.0
 # manual_spec2 = grid22.uni.ac.uk:1234/grid22.uni.ac.uk-condor,HEPSPEC,15.0
 # manual_spec3 = grid35.uni.ac.uk:1234/grid35.uni.ac.uk-condor,HEPSPEC,15.0
+manual_spec1 = <%=@fqdn -%>:9619/<%=@fqdn -%>-condor,HEPSPEC,<%=@benchmark_result -%>
 
 [joiner]
 enabled = true
