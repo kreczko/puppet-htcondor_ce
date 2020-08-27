@@ -37,6 +37,7 @@ class htcondor_ce (
   $supported_vos       = $::htcondor_ce::params::supported_vos,
   $goc_site_name       = $::htcondor_ce::params::goc_site_name,
   $benchmark_result    = $::htcondor_ce::params::benchmark_result,
+  $hepspec06           = '10.00',
   $execution_env_cores = $::htcondor_ce::params::execution_env_cores,
   $election_type       = $::htcondor_ce::params::election_type,
   $election_hosts      = $::htcondor_ce::params::election_hosts,

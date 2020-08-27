@@ -14,7 +14,7 @@ class htcondor_ce::config::apel{
   $apel_mysql_user     = $::htcondor_ce::apel_mysql_user
   $apel_mysql_password = $::htcondor_ce::apel_mysql_password
   $apel_use_test_queue = $::htcondor_ce::apel_use_test_queue
-  $benchmark_result    = $::htcondor_ce::benchmark_result
+  $hepspec06           = $::htcondor_ce::hepspec06
 
   $goc_site_name       = $::htcondor_ce::goc_site_name
 

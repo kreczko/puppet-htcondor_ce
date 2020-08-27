@@ -10,6 +10,7 @@ class htcondor_ce::config::bdii {
   $supported_vos       = $::htcondor_ce::supported_vos
   $goc_site_name       = $::htcondor_ce::goc_site_name
   $benchmark_result    = $::htcondor_ce::benchmark_result
+  $hepspec06           = $::htcondor_ce::hepspec06
   $execution_env_cores = $::htcondor_ce::execution_env_cores
   $election_type       = $::htcondor_ce::election_type
   $election_hosts      = $::htcondor_ce::election_hosts
