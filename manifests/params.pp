@@ -50,4 +50,5 @@ class htcondor_ce::params {
       'set_default_maxMemory' => 3000
       }
   }
+  $job_routes_base_settings = {}
 }
