@@ -16,6 +16,7 @@ class htcondor_ce::config {
   $use_static_shadow   = $::htcondor_ce::use_static_shadow
   # $site_security
   $gsi_regex           = $::htcondor_ce::gsi_regex
+  $host_dn             = $::htcondor_ce::host_dn
   # $main_ce_config
   $condor_view_hosts   = $::htcondor_ce::condor_view_hosts
   $pool_collectors     = $::htcondor_ce::pool_collectors

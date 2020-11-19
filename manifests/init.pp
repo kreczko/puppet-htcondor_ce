@@ -15,6 +15,7 @@ class htcondor_ce (
   $uid_domain          = $::htcondor_ce::params::uid_domain,
   $gsi_regex           = $::htcondor_ce::params::gsi_regex,
   $gsi_backend         = $::htcondor_ce::params::gsi_backend,
+  $host_dn             = $::htcondor_ce::params::host_dn,
   $use_static_shadow   = $::htcondor_ce::params::use_static_shadow,
   $manage_service      = $::htcondor_ce::params::manage_service,
   # for argus
